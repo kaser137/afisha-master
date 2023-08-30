@@ -1,17 +1,17 @@
 FROM python:3.10-slim
 
-RUN mkdir "dj_doc"
+RUN mkdir "afisha"
 
-WORKDIR /dj_doc
+WORKDIR /afisha
 
-COPY ./requirements.txt /dj_doc
+COPY ./requirements.txt /afisha
 
-RUN pip install -r /dj_doc/requirements.txt
+RUN pip install -r /afisha/requirements.txt
 
-COPY . /dj_doc
+COPY . /afisha
 
-EXPOSE 4000
+EXPOSE 5000
 
 CMD ["python", "manage.py", "migrate"]
-CMD ["python", "manage.py", "runserver", "0.0.0.0:4000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:5000"]
 
